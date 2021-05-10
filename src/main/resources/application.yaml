@@ -1,0 +1,13 @@
+#自定义端口
+server:
+  port: 8080
+  servlet:
+    context-path: /kunbo
+
+
+#logging日志设置
+logging:
+  level:
+    com:
+      kunbo: debug
+
