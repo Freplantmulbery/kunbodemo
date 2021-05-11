@@ -1,0 +1,6 @@
+com\kunbo\DemoApplication.class
+com\kunbo\mapper\BearingMapper.class
+com\kunbo\entity\Bearing.class
+com\kunbo\controller\IndexController.class
+com\kunbo\service\BearingService.class
+com\kunbo\controller\BearingController.class

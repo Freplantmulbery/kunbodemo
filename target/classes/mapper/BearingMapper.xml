@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kunbo.mapper.BearingMapper">
+    <sql id="select_x">
+        `time`, x
+    </sql>
+    <sql id="select_y">
+        `time`, y
+    </sql>
+    <sql id="select_z">
+        `time`, z
+    </sql>
+    <sql id="select">
+        `time`, x, y, z
+    </sql>
+    <select id="selectBearingX" resultType="Bearing">
+        select
+        <include refid="select_x"></include>
+        from bearing
+        order by time asc
+        limit 0,1000
+    </select>
+    <select id="selectBearingY" resultType="Bearing">
+        select
+        <include refid="select_y"></include>
+        from bearing
+        order by time asc
+        limit 0,1000
+    </select>
+    <select id="selectBearingZ" resultType="Bearing">
+        select
+        <include refid="select_z"></include>
+        from bearing
+        order by time asc
+        limit 0,1000
+    </select>
+    <select id="selectBearing" resultType="Bearing">
+        select
+        <include refid="select"></include>
+        from bearing
+        order by time asc
+        limit 0,1000
+    </select>
+</mapper>

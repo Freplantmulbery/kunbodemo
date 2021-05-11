@@ -1,13 +1,30 @@
-#�Զ���˿�
+#端口和根标签配置
 server:
   port: 8080
   servlet:
     context-path: /kunbo
 
 
-#logging��־����
+#logging日志文件配置
 logging:
   level:
     com:
       kunbo: debug
 
+#数据库配置
+spring:
+  datasource:
+    username: root
+    password: 328515
+    url: jdbc:mysql://localhost:3306/knbo?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 15
+      idle-timeout: 30000
+      minimum-idle: 5
+
+#mybatis
+mybatis:
+  type-aliases-package: com.kunbo.entity
+  mapper-locations: classpath:mapper/*.xml
