@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kunbo.mapper.DianJiMapper">
+    <sql id="All">
+        id,speed
+    </sql>
+    <sql id="insert">
+        speed
+    </sql>
+    <select id="selectAll" resultType="DianJi">
+        select
+        <include refid="All"></include>
+        from dianji
+        order by id
+        limit 0,1000
+    </select>
+
+    <insert id="insertSpeed" parameterType="DianJi" keyProperty="id">
+        insert into dianji (<include refid="insert"></include>)
+        values (#{speed})
+    </insert>
+</mapper>

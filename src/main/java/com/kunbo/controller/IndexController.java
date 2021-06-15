@@ -9,8 +9,8 @@ public class IndexController {
 
     @RequestMapping("/")
     public String welcome(Model model){
-        model.addAttribute("msg","欢迎兄dei");
-        model.addAttribute("wel","给你整点好东西");
+        model.addAttribute("msg","数据页面");
+        model.addAttribute("wel","查看数据");
         return "welcome";
     }
 
